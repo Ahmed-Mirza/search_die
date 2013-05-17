@@ -1,4 +1,11 @@
 SearchDie::Application.routes.draw do
+  
+  resources :search_contents
+  
+  root to: 'search_contents#search_page'
+  
+  match '/history', to: 'search_contents#history_page'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
