@@ -6,7 +6,7 @@ SearchDie::Application.routes.draw do
   
   match '/history', to: 'search_contents#history_page'
   match '/results', to: 'search_contents#results_page'
-  match '/show_result', to: 'search_contents#show_result_page'
+  match '/show_results', to: 'search_contents#show_results_page'
   match '/store_history', to: 'search_contents#store_history'
   match '/delete_all', to: 'search_contents#delete_all'
   
