@@ -1,5 +1,5 @@
 class SearchContentsController < ApplicationController
-  
+  @@content=""
   def search_page
     @search_content=SearchContent.new
   end
@@ -8,6 +8,7 @@ class SearchContentsController < ApplicationController
     @search_content=SearchContent.new(params[:search_content])
     if @search_content.save
       redirect_to results_path, :notice => "Your Search has been Saved"
+      @@content=@search_content
     else
       render "search_page"
     end
@@ -38,7 +39,7 @@ class SearchContentsController < ApplicationController
     access_token = OAuth::AccessToken.new(consumer, user_token, user_secret)
     
     # Make a request for JSON data
-    @json_txt = access_token.get("/v1/people-search?keywords=#{}", 'x-li-format' => 'json').body
+    @json_txt = access_token.get("/v1/people-search?keywords=#{@@content}", 'x-li-format' => 'json').body
     @profile = JSON.parse(@json_txt)
   end
   
