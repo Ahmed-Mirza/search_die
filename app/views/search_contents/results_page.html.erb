@@ -1,2 +1,15 @@
 <h3>Results Page</h3>
 <%= @profile%>
+<%$i=0 %>
+<%$num= @profile["people"]["_count"].to_i%>
+
+<%= @profile["people"]["values"]%>
+
+<%while $i< $num do %>
+	<%first = @profile["people"]["values"][$i]["firstName"]%>
+	<%last = @profile["people"]["values"][$i]["lastName"]%>
+	<%= @profile["people"]["values"][$i]["id"]%>
+	<% $i +=1 %>
+	<h2><%= link_to "#{first} #{last}",show_results_path%></h2>
+	<hr/>
+<%end%>
