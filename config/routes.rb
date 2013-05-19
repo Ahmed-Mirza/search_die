@@ -1,6 +1,6 @@
 SearchDie::Application.routes.draw do
   
-  #resources :search_contents
+  resources :search_contents
   
   root to: 'search_contents#search_page'
   
