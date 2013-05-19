@@ -3,8 +3,6 @@
 <%$i=0 %>
 <%$num= @profile["people"]["_count"].to_i%>
 
-<%= @profile["people"]["values"]%>
-
 <%while $i< $num do %>
 	<%first = @profile["people"]["values"][$i]["firstName"]%>
 	<%last = @profile["people"]["values"][$i]["lastName"]%>
