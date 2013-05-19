@@ -39,7 +39,7 @@ class SearchContentsController < ApplicationController
     access_token = OAuth::AccessToken.new(consumer, user_token, user_secret)
     
     # Make a request for JSON data
-    @json_txt = access_token.get("/v1/people-search?keywords=#{@@content}", 'x-li-format' => 'json').body
+    @json_txt = access_token.get("/v1/people-search?keywords=@@content", 'x-li-format' => 'json').body
     @profile = JSON.parse(@json_txt)
   end
   
