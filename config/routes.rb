@@ -6,7 +6,9 @@ SearchDie::Application.routes.draw do
   
   match '/history', to: 'search_contents#history_page'
   match '/results', to: 'search_contents#results_page'
-  match '/show_result', to: 'search_content#show_result_page'
+  match '/show_result', to: 'search_contents#show_result_page'
+  match '/store_history', to: 'search_contents#store_history'
+  match '/delete_all', to: 'search_contents#delete_all'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

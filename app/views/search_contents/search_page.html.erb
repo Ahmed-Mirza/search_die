@@ -1,2 +1,10 @@
+<hr />
 <h3>Search Page</h3>
+<hr />
+<%= form_for @search_content, :url=>{:action => "store_history"} do |f|%>
+	<%= f.label "Search"%><br />
+	<%= f.text_field :content%>
+	<%= f.submit "SEARCH!!!"%>
+<%end%>
+
 <small><%= link_to "Search history", history_path%></small>
